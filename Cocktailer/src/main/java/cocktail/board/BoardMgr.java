@@ -1,11 +1,12 @@
-package board;
+package cocktail.board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement; //쿼리 실행을 위해 사용
 import java.sql.ResultSet; // 쿼리 실행결과를 저장시 사용
 import java.util.Vector; //VO를 여러개 저장시 사용
 import javax.servlet.http.HttpServletRequest; //request(요청) 객체 사용
-import com.kmc.dbcp.DBConnectionMgr; //DBCP 객체
+
+import cocktail.dbcp.DBConnectionMgr;
 
 public class BoardMgr {
 	private DBConnectionMgr pool;
@@ -26,11 +27,11 @@ public class BoardMgr {
 		try {
 			con = pool.getConnection( ); 
 			if (keyWord.equals("null") || keyWord.equals("")) { //검색어 없을시
-				sql = "select * FROM booking order by ref desc, pos limit ?, ?";
+				sql = "select * FROM booking order by ref desc limit ?, ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, start);
 				pstmt.setInt(2, end);
-			}else { // 검색어 있을시
+			} else { // 검색어 있을시
 				sql = "select * FROM booking where " + keyField + " like ? ";
 				sql += "order by ref desc limit ? , ?";
 				pstmt = con.prepareStatement(sql);
@@ -50,11 +51,9 @@ public class BoardMgr {
 				bean.setvDate(rs.getString("vDate"));
 				bean.setState(rs.getString("state"));
 				bean.setRef(rs.getInt("ref"));
-				bean.setPos(rs.getInt("pos"));
-				bean.setDepth(rs.getInt("depth"));
 				vlist.add(bean);
 			}
-		}catch(Exception e) { e.printStackTrace( ); }
+		} catch(Exception e) { e.printStackTrace( ); }
 		finally { pool.freeConnection(con, pstmt, rs); }
 		return vlist; //
 	}
@@ -77,7 +76,7 @@ public class BoardMgr {
 			}
 			rs = pstmt.executeQuery( );
 			if (rs.next( )) { 	totalCount = rs.getInt(1); }
-		} catch(Exception e) { e.printStackTrace( ); }
+		} catch (Exception e) { e.printStackTrace( ); }
 		finally { pool.freeConnection(con, pstmt, rs); }
 		return totalCount; 
 	}
@@ -95,8 +94,8 @@ public class BoardMgr {
 			int ref = 1;
 			if(rs.next( )) ref = rs.getInt(1) + 1;
 			
-			sql = "insert booking(event,name,tel,member,vDate,pass,ref,pos,depth)";
-			sql += "values(?, ?, ?, ?, ?, ?, ?, 0, 0)";
+			sql = "insert booking(event,name,tel,member,vDate,pass,ref)";
+			sql += "values(?, ?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, req.getParameter("event"));
 			pstmt.setString(2, req.getParameter("name"));
@@ -154,10 +153,7 @@ public class BoardMgr {
 				bean.setvDate(rs.getString("vDate"));
 				bean.setState(rs.getString("state"));
 				bean.setPass(rs.getString("pass"));
-				
 				bean.setRef(rs.getInt("ref"));
-				bean.setPos(rs.getInt("pos"));
-				bean.setDepth(rs.getInt("depth"));
 			}
 		} 
 		catch(Exception e) { e.printStackTrace( ); }
@@ -228,8 +224,8 @@ public class BoardMgr {
 		try {
 			con = pool.getConnection( );
 			for (int i = 1; i < 1001; i++) {
-			sql = "insert booking(event,name,tel,member,vDate,state,pass,ref,pos,depth)";
-			sql += "values('칵테일 클래스','마로니에','010-1234-5678','3','2021-12-17','처리대기중','1234',"+i+",0,0)";
+			sql = "insert booking(event,name,tel,member,vDate,state,pass,ref)";
+			sql += "values('칵테일 클래스','마로니에','010-1234-5678','3','2021-12-17','처리대기중','1234',"+i+")";
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 			}

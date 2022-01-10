@@ -1,4 +1,4 @@
-package com.kmc.dbcp;
+package cocktail.dbcp;
 
 //@author  Anil Hemrajani
 import java.sql.Connection;

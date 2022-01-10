@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="board.BoardBean"%>
+<%@ page import="cocktail.board.BoardBean"%>
 <%@ page import="java.util.Vector"%>
 
-<jsp:useBean id="bMgr" class="board.BoardMgr" />
+<jsp:useBean id="bMgr" class="cocktail.board.BoardMgr" />
 <%
 request.setCharacterEncoding("utf-8");
 
@@ -18,7 +18,7 @@ int start = 0; // 게시물을 출력할 때 시작번호
 int end = 10; // 게시물을 출력할 때 끝번호
 int listSize = 0; // 현재 읽어온 게시물의 수
 String keyWord = "", keyField = ""; //검색어, 검색 목록
-Vector<BoardBean> vlist = null; // VO를 담을 Vector 객체
+Vector<BoardBean> vlist = null;
 
 if (request.getParameter("keyWord") != null) {
 	keyWord = request.getParameter("keyWord");
@@ -37,11 +37,11 @@ if (request.getParameter("nowPage") != null) {
 }
 
 // 페이지 및 블록페이지 처리를 위한 코드
-start = (nowPage * numPerPage) - numPerPage; // (현재페이지 수 x 페이지당 레코드 수(10)) - 페이지당 레코드 수 : 0, 10, 20...
-end = start + numPerPage; // 시작페이지에서 페이지당 레코드수를 더하면 끝 페이지가 된다. : 10, 20, 30...
+start = (nowPage * numPerPage) - numPerPage; // 페이지 블럭 시작번호: 0, 10, 20...
+end = start + numPerPage; // 페이지 블럭 끝번호: 10, 20, 30...
 totalRecord = bMgr.getTotalCount(keyField, keyWord); // 전체 게시물 개수
 totalPage = (int) Math.ceil((double) totalRecord / numPerPage); // 전체페이지 수(전체 게시물 수/페이지당 레코드 수)
-nowBlock = (int) Math.ceil((double) nowPage / pagePerBlock); // 현재 블럭페이지 계산(현재페이지/블럭당 페이지수)  
+nowBlock = (int) Math.ceil((double) nowPage / pagePerBlock); // 현재 페이지 블럭 계산(현재페이지/블럭당 페이지수)  
 totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭계산(전체 페이지 수/블럭당 페이지수)
 %>
 <!DOCTYPE html>
@@ -70,27 +70,23 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 <script src="js/list.js"></script>
 
 <script>
-	function list() {
+	function list() { // 게시물 목록 출력
 		document.listFrm.action = "list.jsp";
 		document.listFrm.submit();
 	}
 
-	function pageing(page) {
-		//페이지 번호[n] 를 클릭했을 때 실행, 페이지 번호에 해당하는 페이지를 보여줌
+	function pageing(page) { // 사용자가 클릭한 페이지 블럭 게시물 목록 출력
 		document.readFrm.nowPage.value = page;
-		//pageing()의 매개변수로 전달한 페이지 번호로 현재 페이지 번호를 지정
 		document.readFrm.submit();
 	}
 
-	function block(value) { //블럭 페이지 이동 함수
-		// Prev, Next 버튼을 클릭하면 실행, 이전 블럭 번호(nowBlock+1)와 다음 블럭 번호(nowBlock+1)를 value에 전달
-		document.readFrm.nowPage.value =
-	<%=pagePerBlock%>
+	function block(value) { // 블럭 페이지 이동 함수
+		document.readFrm.nowPage.value = <%=pagePerBlock%>
 	* (value - 1) + 1;
 		document.readFrm.submit();
 	}
 
-	function read(num) { // 제목을 클릭하면 실행, 레코드 번호에 해당하는 글 내용 페이지를 보여준다.
+	function read(num) { // num에 해당하는 페이지 출력
 		document.readFrm.num.value = num;
 		document.readFrm.action = "readPass.jsp";
 		document.readFrm.submit();
@@ -147,8 +143,8 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 		</p>
 		<%
 		vlist = bMgr.getBoardList(keyField, keyWord, start, end);
-		// start~end 페이지 번호만큼 게시물을 얻는다. 
-		listSize = vlist.size(); // 화면에 보여질 게시물 개수(지금은 10개)
+		// start~end 페이지 번호만큼 게시물 출력
+		listSize = vlist.size(); // 화면에 보여질 게시물 개수
 		if (vlist.isEmpty()) {
 			out.println("등록된 게시물이 없습니다.");
 		} else {
@@ -164,7 +160,7 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 				</tr>
 			</thead>
 			<%
-			for (int i = 0; i < numPerPage; i++) { // numPerPage(페이지당 레코드 개수)
+			for (int i = 0; i < numPerPage; i++) { // numPerPage(페이지당 출력되는 게시물)
 				if (i == listSize)
 					break;
 				BoardBean bean = vlist.get(i);
@@ -174,13 +170,9 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 				int member = bean.getMember();
 				String vDate = bean.getvDate();
 				String state = bean.getState();
-				int depth = bean.getDepth();
 			%>
 				<tr>
 					<td><%=totalRecord - ((nowPage - 1) * numPerPage) - i%></td>
-					<%
-					//글번호, num과 다름
-					%>
 					<td>
 						<a href="javascript:read('<%=num%>')" class="readNum"><%=event%></a>
 					</td>
@@ -189,7 +181,7 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 					<td><%=state%></td>
 				</tr>
 			<%
-			} //내용 끝
+			} // 게시물 컬럼 출력 끝
 			%>
 		<%
 		 }//if (vlist.isEmpty()) else:END
@@ -198,9 +190,8 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 		<!-- 페이징 및 블럭 처리 : 시작 -->
 		<%
 		int pageStart = (nowBlock - 1) * pagePerBlock + 1;
-		// nowBlock(현재블럭), pagePerBlock(페이지당 블럭 개수:5)
+		// nowBlock(현재블럭), pagePerBlock( 페이지 블럭 표시 개수:5 [1],...,[5] )
 		int pageEnd = ((pageStart + pagePerBlock) < totalPage) ? (pageStart + pagePerBlock) : totalPage + 1;
-		//블럭당 시작페이지의 번호와 페이지당 블럭 개수를 더한 값이 총 페이지 개수보다 작으면
 		if (totalPage != 0) {
 		%>
 		<div class="btn-toolbar justify-content-center">

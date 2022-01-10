@@ -1,4 +1,4 @@
-package board;
+package cocktail.board;
 
 public class BoardBean {
 	
@@ -11,8 +11,6 @@ public class BoardBean {
 	private String state;
 	private String pass;
 	private int ref;
-	private int pos;
-	private int depth;
 	
 	public int getNum() {
 		return num;
@@ -61,18 +59,6 @@ public class BoardBean {
 	}
 	public void setPass(String pass) {
 		this.pass = pass;
-	}
-	public int getPos() {
-		return pos;
-	}
-	public void setPos(int pos) {
-		this.pos = pos;
-	}
-	public int getDepth() {
-		return depth;
-	}
-	public void setDepth(int depth) {
-		this.depth = depth;
 	}
 	public int getRef() {
 		return ref;

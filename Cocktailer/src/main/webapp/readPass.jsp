@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="board.BoardBean"%>
-<%@ page import="board.MemberBean"%>
+<%@ page import="cocktail.board.BoardBean"%>
+<%@ page import="cocktail.board.MemberBean"%>
 
-<jsp:useBean id="bMgr" class="board.BoardMgr" />
+<jsp:useBean id="bMgr" class="cocktail.board.BoardMgr" />
 
 <!DOCTYPE html>
 <html>
@@ -27,8 +27,10 @@
 
 <%
 	request.setCharacterEncoding("utf-8");
-	String nowPage = request.getParameter("nowPage");
 	int num = Integer.parseInt(request.getParameter("num"));
+	String nowPage = request.getParameter("nowPage");
+	String keyField = request.getParameter("keyField");
+	String keyWord = request.getParameter("keyWord");
 	
 	MemberBean memBean = bMgr.getPass();
 	String dbaPass = memBean.getPass( );
@@ -41,10 +43,10 @@
 		String dbPass = bean.getPass( );
 		
 		if(inPass.equals(dbPass)) {
-			String url = "read.jsp?num=" + num;
+			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWord;
 			response.sendRedirect(url);
 		} else if(inPass.equals(dbaPass)) {
-			String url = "read.jsp?num=" + num;
+			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWord;
 			response.sendRedirect(url);
 		} else {
 %>
@@ -110,8 +112,10 @@
 				<input type="reset" value="원래대로" class="btn btn-secondary me-2">
 				<input type="button" value="확 인" onClick="check( )" class="btn btn-secondary"> 
 			</div>
-			<input type="hidden" name="nowPage" value="<%=nowPage%>"> 
 			<input type="hidden" name="num" value="<%=num%>">
+			<input type="hidden" name="nowPage" value="<%=nowPage%>">
+			<input type="hidden" name="keyField" value="<%=keyField%>"> 
+			<input type="hidden" name="keyWord" value="<%=keyWord%>">
 		</form>
 	</div>
 	

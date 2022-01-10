@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="board.BoardBean"%>
+<%@ page import="cocktail.board.BoardBean"%>
 
-<jsp:useBean id="bMgr" class="board.BoardMgr" />
+<jsp:useBean id="bMgr" class="cocktail.board.BoardMgr" />
 
 <!DOCTYPE html>
 <html>

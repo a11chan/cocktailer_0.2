@@ -1,4 +1,4 @@
-package driverTest;
+package cocktail.test;
 
 import java.sql.*;
 

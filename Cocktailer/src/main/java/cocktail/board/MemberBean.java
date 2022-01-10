@@ -1,4 +1,4 @@
-package board;
+package cocktail.board;
 
 public class MemberBean {
 	private String pass;

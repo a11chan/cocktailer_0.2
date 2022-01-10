@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="board.BoardBean"%>
+<%@ page import="cocktail.board.BoardBean"%>
 
-<jsp:useBean id="bMgr" class="board.BoardMgr" />
+<jsp:useBean id="bMgr" class="cocktail.board.BoardMgr" />
 
 <%
 	request.setCharacterEncoding("utf-8");
 	int num = Integer.parseInt(request.getParameter("num"));
-	String nowPage = request.getParameter("nowPage"); // 현재 페이지
-	
+	String nowPage = request.getParameter("nowPage");
 	String keyField = request.getParameter("keyField");
 	String keyWord = request.getParameter("keyWord");
 	
@@ -110,21 +109,20 @@
 		</div>
 		
 		<div class="btnSet d-flex justify-content-center">
-			<!-- <a href="javascript:list( )" class="btn btn-secondary me-2">목 록</a> --> 
-			<a href="list.jsp" class="btn btn-secondary me-2">목 록</a> 
+			<a href="javascript:list( )" class="btn btn-secondary me-2">목 록</a> 
 			<a href="update.jsp?nowPage=<%=nowPage%>&num=<%=num%>" class="btn btn-secondary me-2">수 정</a>
 			<a href="delete.jsp?nowPage=<%=nowPage%>&num=<%=num%>" class="btn btn-secondary me-2">삭 제</a>
 		</div>
 	</div>
 	
-<%-- 	<form name="listFrm" method="post">
+	<form name="listFrm" method="post">
 		<input type="hidden" name="num" value="<%=num%>">
 		<input type="hidden" name="nowPage" value="<%=nowPage%>">
 		<% if(!(keyWord==null || keyWord.equals("null"))) { %>
 			<input type="hidden" name="keyField" value="<%=keyField%>">
 			<input type="hidden" name="keyWord" value="<%=keyWord%>">
 		<% } %>
-	</form> --%>
+	</form>
 	
 	<footer>
 		<div class="footerleft pc">
