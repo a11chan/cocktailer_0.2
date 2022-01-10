@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.container {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	max-width:720px;
+	padding:150px 0 120px;
+}
+.container h4 {
+	font-size: 42px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+.container h4 span {
+	color: #f771d1;
+}
+div.container div.input-group {
+	width:320px;
+}
+div.container div.input-group span, label {
+	width:84.89px;
+}
+div.container div.end {
+	margin-bottom:16px;
+}
