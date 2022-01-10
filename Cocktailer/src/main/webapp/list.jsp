@@ -99,7 +99,6 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 			return;
 		}
 		document.searchFrm.submit();
-		// 검색어가 있으면 검색목록과 검색어를 list.jsp의 bMgr.getBoardList(keyField, keyWord, start, end); 로 전달
 	}
 </script>
 </head>
@@ -247,7 +246,7 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 			<input type="hidden" name="reload" value="true">
 			<input type="hidden" name="nowPage" value="1">
 		</form>
-		<form name="readFrm" method="get">
+		<form name="readFrm" method="post">
 			<input type="hidden" name="num">
 			<input type="hidden" name="nowPage" value="<%=nowPage%>">
 			<input type="hidden" name="keyField" value="<%=keyField%>">

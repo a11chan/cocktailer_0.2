@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page import="cocktail.board.BoardBean"%>
 <%@ page import="cocktail.board.MemberBean"%>
 
@@ -31,22 +32,22 @@
 	String nowPage = request.getParameter("nowPage");
 	String keyField = request.getParameter("keyField");
 	String keyWord = request.getParameter("keyWord");
+	String keyWordEnc = URLEncoder.encode(keyWord,"UTF-8");
 	
 	MemberBean memBean = bMgr.getPass();
-	String dbaPass = memBean.getPass( );
+	String dbaPass = memBean.getPass( ); 
 	
 	BoardBean bean = bMgr.getBoard(num);
-	String dbpass = bean.getPass( );
 	
 	if(request.getParameter("pass") != null) {
 		String inPass = request.getParameter("pass");
 		String dbPass = bean.getPass( );
 		
 		if(inPass.equals(dbPass)) {
-			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWord;
+			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWordEnc;
 			response.sendRedirect(url);
 		} else if(inPass.equals(dbaPass)) {
-			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWord;
+			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWordEnc;
 			response.sendRedirect(url);
 		} else {
 %>
@@ -55,7 +56,7 @@
 		history.back( );
 	</script>
 <%		} //if-if-else:end
-	} else { //비밀번호 미입력시
+	} else { //비밀번호 미입력 시 화면 표시
 %>
 <script>
 	function check( ) {
@@ -151,7 +152,7 @@
 		</div>
 	</footer>
 	<%
-	} //if-else:end
+	} //if-else:비밀번호 미입력시
 	%>
 </body>
 </html>
