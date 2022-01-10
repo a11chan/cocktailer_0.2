@@ -3,9 +3,6 @@ body {
   width: 100%;
   height: 100vh;
 }
-body header h1 {
-	cursor:pointer;
-}
 #age_check.none,
 #age_check__alert.none {
   display: none;
@@ -81,6 +78,7 @@ body header h1 {
   height: 30px;
   border: none;
   background: #fff;
+  border-radius: 5px;
 }
 #age_check__alert {
   display: flex;
@@ -991,4 +989,9 @@ body header h1 {
   .textbox a span {
     color: #535353;
   }
+}
+
+body header {
+	cursor:pointer;
+	z-index:9;
 }
