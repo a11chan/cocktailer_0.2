@@ -27,4 +27,7 @@ div.container div.end {
 	.container {
 	padding:140px 0 120px;
 	}
+	.container h4 {
+	font-size:34px;
+	}
 }

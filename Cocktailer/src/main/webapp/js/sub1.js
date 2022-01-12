@@ -141,4 +141,6 @@ $(document).ready(function() {
     $(".toRight").click(function () {
         $(".carouselBox").animate({ scrollLeft: "+=90" }, 30, "swing");
     });
+    
+    $(".flexslider").flexslider({ animation: "slide" });
 }); // end of script

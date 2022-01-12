@@ -11,7 +11,7 @@
 	String upPass = upBean.getPass( );
 	String inPass = bean.getPass( );
 	if(upPass.equals(inPass)) {
-		bMgr.updateBoard(upBean); //게시물 수정처리(DB에 등록)
+		bMgr.updateBoard(upBean);
 		String url = "read.jsp?nowPage="+nowPage+"&num="+upBean.getNum( );
 		response.sendRedirect(url);
 	} else {

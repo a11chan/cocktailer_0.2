@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko-kr">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OUR RUMS</title>
-<link rel="stylesheet" href="./css/common.css" />
-<link rel="stylesheet" href="./css/reset.css" />
-<link rel="stylesheet" href="./css/sub1.css" />
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="flexSlider/flexslider.css" />
-<link rel="shortcut icon" href="imgs/favicon.ico" />
+<%@ include file="/includes/sub1_header.jsp"%>
 
-<script src="flexSlider/jquery.flexslider-min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./js/sub1.js"></script>
-</head>
-<body>
-	<header>
-		<h1 onClick="javascript:location.href='index.html'" class="logo">
-			cock<span>tailer</span>
-		</h1>
-		<div class="topmenu">
-			<!--<a href="#">login</a> -->
-        	<!-- <a href="#">join</a> -->
-		</div>
-		<div class="topmenulogo">
-			<!-- <i class="fas fa-user"></i> -->
-        	<!-- <i class="fas fa-sign-in-alt"></i> -->
-		</div>
-	</header>
-	<div id="trigger">
-		<span></span> <span></span> <span></span>
-	</div>
-
-	<nav id="mainmenu">
-		<ul class="mainmenu__menu">
-			<li><a href="#">our rums</a></li>
-			<li><a href="sub2.html">flavors range</a></li>
-			<li><a href="sub3.jsp">experiences</a></li>
-			<li>
-				<a href="#"><i class="fab fa-facebook"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-			</li>
-		</ul>
-	</nav>
-	<!-- /sub1_header.jsp -->
-	
 	<div class="banner subTitleBox">
 		<div class="rotate">
 			<h2 class="subTitle">our rums</h2>
@@ -479,35 +429,7 @@
 		<div class="clear"></div>
 	</section>
 	
-	<!-- footer.jsp -->
-	<footer>
-		<div class="footerleft pc">
-			<h6>칵테일러</h6>
-			<p>김대표 | 광주 북구 경양로 170 | tel. 062-123-4567 fax.062-123-4568 |
-				cocktailer@naver.com</p>
-		</div>
-		<div class="footerleft tb">
-			<h6>칵테일러</h6>
-			<h6>김대표</h6>
-			<p>
-				<span>|</span> 광주 북구 경양로 170
-			</p>
-			<p>
-				<span>|</span> tel. 062-123-4567 fax.062-123-4568
-			</p>
-			<p>
-				<span>|</span> cocktailer@naver.com
-			</p>
-		</div>
-		<div class="footerright">
-			<div class="footersnsbox">
-				<i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i> <i
-					class="fab fa-instagram"></i>
-			</div>
-			<div class="sitemap">
-				<span>사이트맵</span> <a href="#">↗</a>
-			</div>
-		</div>
-	</footer>
-</body>
+<%@ include file="/includes/footer.jsp"%>
+
+	</body>
 </html>
