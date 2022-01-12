@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="cocktail.board.BoardBean"%>
+<%@ page import="cocktail.board.MemberBean"%>
 
 <jsp:useBean id="bMgr" class="cocktail.board.BoardMgr" />
 
@@ -32,10 +33,12 @@
 		BoardBean bean = (BoardBean) session.getAttribute("bean");
 		String dbPass = bean.getPass( );
 		
-		if(inPass.equals(dbPass)) {
+		MemberBean memBean = bMgr.getPass();
+		String dbaPass = memBean.getPass( );
+		
+		if(inPass.equals(dbPass)||inPass.equals(dbaPass)) {
 			bMgr.deleteBoard(num);
-			/*String url = "list.jsp?nowPage=" + nowPage;*/
-			String url = "list.jsp";
+			String url = "list.jsp?nowPage=" + nowPage;
 			response.sendRedirect(url);
 		} else {
 %>

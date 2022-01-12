@@ -33,18 +33,14 @@
 	String keyWordEnc = URLEncoder.encode(keyWord,"UTF-8");
 	
 	MemberBean memBean = bMgr.getPass();
-	String dbaPass = memBean.getPass( ); 
-	
 	BoardBean bean = bMgr.getBoard(num);
 	
 	if(request.getParameter("pass") != null) {
 		String inPass = request.getParameter("pass");
 		String dbPass = bean.getPass( );
+		String dbaPass = memBean.getPass( );
 		
-		if(inPass.equals(dbPass)) {
-			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWordEnc;
-			response.sendRedirect(url);
-		} else if(inPass.equals(dbaPass)) {
+		if(inPass.equals(dbPass)||inPass.equals(dbaPass)) {
 			String url = "read.jsp?num="+num+"&nowPage="+nowPage+"&keyField="+keyField+"&keyWord="+keyWordEnc;
 			response.sendRedirect(url);
 		} else {
