@@ -40,31 +40,6 @@ section span {
 	border: 0;
 }
 
-div.alert {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: auto;
-	padding: 25px 0;
-	width: 360px;
-	border-radius: 30px;
-	border: 3px solid rgba(255, 255, 255, 0.5);
-	transition: all 0.3s ease-in;
-}
-
-div.alert:hover {
-	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-		rgba(0, 0, 0, 0.5);
-}
-
-div.alert h3 {
-	height: 100%;
-	font-family: "Gowun Batang", serif;
-	font-size: 26px;
-	text-align: center;
-	color: #fff;
-}
-
 /* ///// FHD ////// */
 @media screen and (min-width: 1450px) {
 	/* 타이틀 박스 */
@@ -450,105 +425,34 @@ div.alert h3 {
 		position: absolute;
 		bottom: 20px;
 	}
-
-	/* 럼 출력 슬라이더 */
-	.itemShow {
-		position: relative;
+	
+	div.itemShow {
+		max-width: 1420px; /* .itemFilterBox와 너비 같음 */
+		margin:0 auto 120px;
 	}
-
-	/* 좌우스크롤 화살표 */
-	.Bchevron {
-		z-index: 10;
-		position: absolute;
-		bottom: calc(50% - 50px);
-		width: 30px;
-		cursor: pointer;
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
+	
+	div.itemShow .itemBox {
+		position:relative;
 	}
-	.toLeft {
-		left: 30px;
+	div.itemShow .itemBox .caption{
+		position:absolute;
+		right:7px; bottom:7px;
+		display:flex;
+		flex-direction:column;
+		align-items:flex-end;
+		padding:5px;
+		color:#eee;
+		background:rgba(3,3,3,.4);
+		box-shadow:0px 0px 3px 2px rgba(3,3,3,.4);
 	}
-	.toLeft:hover {
-		filter: invert(0.1);
+	div.itemShow .itemBox .caption h5 {
+		text-transform:uppercase;
+		font-size:32px;
 	}
-	.toRight {
-		right: 30px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-	.carouselBox {
-		padding: 90px 260px 120px;
-		height: 855px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
-	.itemBox {
-		display: inline-block;
-		position: relative;
-		padding: 50px;
-		margin: auto 25px;
-		width: 400px;
-		height: 645px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
-	}
-	.itemBox>.itemImg {
-		width: 300px;
-		height: 300px;
-		margin-bottom: 45px;
-		border-radius: 300px;
-		object-fit: cover;
-	}
-	.itemBox>h5 {
-		margin-bottom: 30px;
-		font-size: 18px;
-		color: #e2e2e2;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.itemBox>p {
-		white-space: normal;
-		font-size: 16px;
-		color: #e2e2e2;
-		text-align: center;
-	}
-	.itemBox>a {
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		left: calc(50% - 75px);
-		bottom: 50px;
-		width: 150px;
-		height: 50px;
-		border-radius: 40px;
-		cursor: pointer;
-		text-align: center;
-		line-height: 47px;
-		font-family: "Noto Sans KR", sans-serif;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-		box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox>a:hover {
-		color: #fff;
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
-		box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
-			rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
+	div.itemShow .itemBox .caption a {
+	
+		display:block;
+		color:#eee;
 	}
 }
 
@@ -943,39 +847,6 @@ div.alert h3 {
 		position: relative;
 	}
 
-	/* 좌우스크롤 화살표 */
-	.Bchevron {
-		z-index: 10;
-		position: absolute;
-		bottom: calc(50% - 50px);
-		width: 30px;
-		cursor: pointer;
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
-	}
-	.toLeft {
-		left: 30px;
-	}
-	.toLeft:hover {
-		filter: invert(0.1);
-	}
-	.toRight {
-		right: 30px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-	.carouselBox {
-		padding: 90px 260px 120px;
-		height: 855px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
 	.itemBox {
 		display: inline-block;
 		position: relative;
