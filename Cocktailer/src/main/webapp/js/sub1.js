@@ -7,7 +7,6 @@ $(document).ready(function() {
 
     var tasteFilter = $(".submenu input");
     var targetList = $(".itemShow > .itemBox");
-    var alert = $(".itemShow > .alert");
     var targetList2 = $(".pickedBox > div > label");
     var chevronAll = $(".chevron");
     var chevron1 = $(
@@ -44,32 +43,27 @@ $(document).ready(function() {
             chevron1.fadeIn()
         } else {
             chevron1.hide();
-            alert.hide();
         }
         
         if (targetClass.match(".p_")) {
             chevron2.fadeIn()
         } else {
             chevron2.hide();
-            alert.hide();
         }
 
         if (targetClass.match(".f_")) {
             chevron3.fadeIn()
         } else {
             chevron3.hide();
-            alert.hide();
         }
 
         if (targetClass.match(".t_")) {
             chevron4.fadeIn()
         } else {
             chevron4.hide();
-            alert.hide();
         }
 
         if (targetClass == "") {
-			alert.hide();
             chevronAll.fadeOut();
             $(".itemShow").fadeOut();
         }
@@ -78,7 +72,7 @@ $(document).ready(function() {
         //console.log(targetClass);
     });
 
-    // 검색 결과 출력 토글
+	// 검색 결과 출력 토글
     $(".itemShow").hide();
     $("#searchBtn").click(function () {
         $(".itemShow").fadeToggle();

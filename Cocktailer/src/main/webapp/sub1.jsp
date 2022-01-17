@@ -349,9 +349,6 @@
 	<div class="clear"></div>
 	
 	<div class="itemShow">
-		<div class="alert">
-			<h3>검색조건을 선택해주세요</h3>
-		</div>
 		<div
 			class="itemBox n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">
 			<img class="itemImg" src="./imgs/filterItem/1CARTA_BLANCA.jpg"

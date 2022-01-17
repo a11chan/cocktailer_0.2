@@ -119,25 +119,6 @@ section span {
         rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
 }
 
-div.alert {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin: auto;
-	padding: 25px 0;
-	width: 360px;
-	border-radius: 10px;
-	border: 2px solid rgba(3, 3, 3, 0.5);
-}
-
-div.alert h3 {
-	height: 100%;
-	font-family: "Gowun Batang", serif;
-	font-size: 26px;
-	text-align: center;
-	color: #333;
-}
-
 footer {
 	margin-top:120px;
 }
@@ -1706,23 +1687,4 @@ footer {
 		background: linear-gradient(to left, #fff 30%, rgba(33, 33, 33, 0) 70%);
 	}
 	
-	/* .itemShow 이하 */
-	div.alert {
-		position: relative;
-		padding: 10px 0;
-		top: 50%;
-		transform: translateY(-50%);
-		margin: auto;
-		width: 250px;
-		border-radius: 10px;
-		border: 2px solid rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	div.alert h3 {
-		height: 100%;
-		font-family: "Gowun Batang", serif;
-		font-size: 18px;
-		text-align: center;
-		color: #333;
-	}
 }
