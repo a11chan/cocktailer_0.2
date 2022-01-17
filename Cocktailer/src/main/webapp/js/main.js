@@ -29,7 +29,6 @@ $(document).ready(function() {
 	// 메인 배경 이미지
 	$(".flexslider").flexslider({
 		animation: "slide",
-		controlsContainer: $(".custom-controls-container"),
 		customDirectionNav: $(".custom-navigation a"),
 		slideshowSpeed: 3500,
 	});

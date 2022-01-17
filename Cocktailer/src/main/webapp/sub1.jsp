@@ -27,8 +27,9 @@
 
 	<div class="filterBox">
 		<div class="filterBoxInner">
+			<!-- 좌측 메인메뉴(취향선택) -->
 			<div class="pickingBox l-pickingBox">
-				<div>
+				<div> <!-- nose -->
 					<input type="checkbox" name="taste" id="noseBtn" /> <label
 						for="noseBtn">nose</label>
 					<div class="blindNose"></div>
@@ -58,7 +59,7 @@
 							value="n_vanilla" /> <label for="n_vanilla">vanilla</label>
 					</div>
 				</div>
-				<div>
+				<div> <!-- palate -->
 					<input type="checkbox" name="taste" id="palateBtn" /> <label
 						for="palateBtn">palate</label>
 					<div class="blindPalate"></div>
@@ -99,7 +100,7 @@
 							for="p_tropical">tropical</label>
 					</div>
 				</div>
-				<div>
+				<div> <!-- finish -->
 					<input type="checkbox" name="taste" id="finishBtn" /> <label
 						for="finishBtn">finish</label>
 					<div class="blindFinish"></div>
@@ -139,7 +140,7 @@
 							value="f_well-rounded" /> <label for="f_well-rounded">well-rounded</label>
 					</div>
 				</div>
-				<div>
+				<div> <!-- type -->
 					<input type="checkbox" name="taste" id="typeBtn" /> <label
 						for="typeBtn">type</label>
 					<div class="blindType"></div>
@@ -165,7 +166,7 @@
 
 			<!-- 우측 서브메뉴(선택항목 표시) -->
 			<div class="pickingBox r-pickingBox">
-				<div>
+				<div> <!-- nose -->
 					<input type="checkbox" id="nose2Btn" /> <label for="nose2Btn">nose</label>
 					<div class="pickedBox box1">
 						<div class="pickedNose">
@@ -187,7 +188,7 @@
 						<div class="chevron Rchevron toRight1"></div>
 					</div>
 				</div>
-				<div>
+				<div> <!-- palate -->
 					<input type="checkbox" id="palate2Btn" /> <label for="palate2Btn">palate</label>
 					<div class="pickedBox box2">
 						<div class="pickedPalate">
@@ -214,7 +215,7 @@
 						<div class="chevron Rchevron toRight2"></div>
 					</div>
 				</div>
-				<div>
+				<div> <!-- finish -->
 					<input type="checkbox" id="finish2Btn" /> <label for="finish2Btn">finish</label>
 					<div class="pickedBox box3">
 						<div class="pickedFinish">
@@ -240,7 +241,7 @@
 						<div class="chevron Rchevron toRight3"></div>
 					</div>
 				</div>
-				<div>
+				<div> <!-- type -->
 					<input type="checkbox" id="type2Btn" /> <label for="type2Btn">type</label>
 					<div class="pickedBox box4">
 						<div class="pickedType">
@@ -266,7 +267,7 @@
 </section>
 
 	<div class="flexslider itemShow">
-		<ul class="slides hidden">
+		<ul class="slides">
 			<li>
 				<div
 					class="itemBox container n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">

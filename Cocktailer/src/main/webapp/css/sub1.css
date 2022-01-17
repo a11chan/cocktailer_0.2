@@ -40,6 +40,10 @@ section span {
 	border: 0;
 }
 
+footer {
+	margin-top:120px;
+}
+
 /* ///// FHD ////// */
 @media screen and (min-width: 1450px) {
 	/* 타이틀 박스 */
@@ -426,10 +430,13 @@ section span {
 		bottom: 20px;
 	}
 	
+	/* .itemFilterBox와 너비 같음 */
+	/* 
 	div.itemShow {
-		max-width: 1420px; /* .itemFilterBox와 너비 같음 */
+		max-width: 1420px; 
 		margin:0 auto 120px;
 	}
+	*/
 	
 	div.itemShow .itemBox {
 		position:relative;

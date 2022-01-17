@@ -6,10 +6,33 @@ $(document).ready(function() {
 		$("#mainmenu").toggleClass("active");
 	});
 	
+	// 좌측 div.pickingBox 라디오-체크박스 적용
+	$("#noseBtn").click(function() {
+		$('input[name="taste"]').not("#noseBtn").prop("checked", false);
+	});
+	$("#palateBtn").click(function() {
+		$('input[name="taste"]').not("#palateBtn").prop("checked", false);
+	});
+	$("#finishBtn").click(function() {
+		$('input[name="taste"]').not("#finishBtn").prop("checked", false);
+	});
+	$("#typeBtn").click(function() {
+		$('input[name="taste"]').not("#typeBtn").prop("checked", false);
+		// console.log($("#noseBtn").is(":checked"))
+	});
+	
+	// 필터 항목 숨김처리 기능 시작
+	// 숨김 스위치, input요소의 value는 상품의 속성임
 	var tasteFilter = $(".submenu input");
-	var targetList = $("div.itemShow div.itemBox");
+	// 숨길 상품사진
+	var targetList = $(".itemShow .itemBox");
+	// 숨길 상품명
 	var targetList2 = $(".pickedBox > div > label");
+
+	// sub1.jsp 내 모든 숨길 화살표들
 	var chevronAll = $(".chevron");
+	
+	// div.pickedBox 내 숨길 화살표들
 	var chevron1 = $(
 		".pickedBox > .toLeft1, .pickedBox > .toRight1"
 	);
@@ -22,11 +45,13 @@ $(document).ready(function() {
 	var chevron4 = $(
 		".pickedBox > .toLeft4, .pickedBox > .toRight4"
 	);
-
-	chevronAll.hide();
+	
+	// 페이지 로딩 후 상품관련 요소 숨김처리
 	targetList.hide();
 	targetList2.hide();
-
+	chevronAll.hide();
+	
+	// 숨김 스위치 작동시 실행할 내용들
 	tasteFilter.click(function() {
 		chevronAll.hide();
 		targetList.hide();
@@ -37,16 +62,10 @@ $(document).ready(function() {
 			targetValue.push("." + $(this).val());
 		});
 		var targetClass = targetValue.join(", ");
-		
+
 		$(targetClass).fadeIn(); // 선택된 클래스 전부 표시(문서전체)
 
-		$('.flexslider').flexslider({
-			animation: "slide",
-		});
-		// 슬라이더 적용시 인디케이터가 모두 표시되는 문제
-		// li에 클래스 붙여서 fadeToggle 적용필
-		// New Branch 작성필
-
+		// .pickedBox 좌우 화살표 fadeToggle
 		if (targetClass.match(".n_")) {
 			chevron1.fadeIn(), chevron0.fadeIn();
 		} else {
@@ -75,23 +94,8 @@ $(document).ready(function() {
 			chevronAll.fadeOut();
 			$(".itemShow").fadeOut();
 		}
-		
-	});
-	
-	// 라디오-체크박스 적용 (inline-block처럼 서로의 특징 혼합)
-	$("#noseBtn").click(function() {
-		$('input[name="taste"]').not("#noseBtn").prop("checked", false);
-	});
-	$("#palateBtn").click(function() {
-		$('input[name="taste"]').not("#palateBtn").prop("checked", false);
-	});
-	$("#finishBtn").click(function() {
-		$('input[name="taste"]').not("#finishBtn").prop("checked", false);
-	});
-	$("#typeBtn").click(function() {
-		$('input[name="taste"]').not("#typeBtn").prop("checked", false);
-		// console.log($("#noseBtn").is(":checked"))
-	});
+
+	}); // END:div.filterBox 내 클릭 이벤트 발생시 실행 코드
 
 	// .pickedBox 좌우 스크롤
 	$(".toLeft1").click(function() {
@@ -126,5 +130,24 @@ $(document).ready(function() {
 		$("div.box4 > div.pickedType")
 			.animate({ scrollLeft: "+=100" }, 30, "swing");
 	});
+	
+	
+	// 검색 결과 출력화면 fadeToggle
+	/*
+	$(".itemShow").hide();
+	$("#searchBtn").click(function() {
+		$(".itemShow").fadeToggle();
+	});
+	*/
+	
+	$("#searchBtn").click(function() {
+		$(".itemShow").fadeToggle();
+	});
+
+	
+	$('.flexslider').flexslider({
+		animation: "slide",
+	});
+	
 
 }); // end of script
