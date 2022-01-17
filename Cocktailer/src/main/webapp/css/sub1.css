@@ -23,7 +23,7 @@ section span {
 	padding-bottom: 4px;
 	width: 120px;
 	height: 40px;
-	border-radius: 40px;
+	border-radius: 10px;
 	cursor: pointer;
 	font-family: "Noto Sans KR", sans-serif;
 	font-size: 16px;
@@ -40,6 +40,85 @@ section span {
 	border: 0;
 }
 
+/* 럼 출력 슬라이더 모양 */
+.itemShow {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-content:space-between;
+    margin: 0 auto;
+    padding: 0 10px;
+    width:100%;
+}
+
+
+/* 럼 출력 슬라이더 상품소개 박스 */
+.itemBox {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+    position: relative;
+    padding: 50px 20px 30px;
+    margin: 10px;
+    width: 280px;
+    height: 560px;
+    border-radius: 10px;
+    border: 3px solid rgba(3, 3, 3, 0.5);
+    transition: all 0.3s ease-in;
+    background: #f3f3f6;
+}
+
+.itemBox:hover {
+    box-shadow: 0 0 0 10px rgba(3, 3, 3, 0.5);
+}
+
+.itemBox>.itemImg {
+    width: 220px;
+    height: 220px;
+    margin:0 auto 25px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.itemBox>h5 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+.itemBox>p {
+    white-space: normal;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+.itemBox>a {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 47px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
+    transition: all 0.3s ease-in;
+}
+.itemBox>a:hover {
+    color: #333;
+    background: rgba(3, 3, 3, 0.1);
+    border: 0;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
+        rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
+}
+
 div.alert {
 	position: relative;
 	top: 50%;
@@ -47,14 +126,8 @@ div.alert {
 	margin: auto;
 	padding: 25px 0;
 	width: 360px;
-	border-radius: 30px;
-	border: 3px solid rgba(255, 255, 255, 0.5);
-	transition: all 0.3s ease-in;
-}
-
-div.alert:hover {
-	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-		rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	border: 2px solid rgba(3, 3, 3, 0.5);
 }
 
 div.alert h3 {
@@ -62,7 +135,11 @@ div.alert h3 {
 	font-family: "Gowun Batang", serif;
 	font-size: 26px;
 	text-align: center;
-	color: #fff;
+	color: #333;
+}
+
+footer {
+	margin-top:120px;
 }
 
 /* ///// FHD ////// */
@@ -424,7 +501,7 @@ div.alert h3 {
 		text-transform: uppercase;
 		text-align: center;
 		border: 1px solid #9542bf;
-		border-radius: 14px;
+		border-radius: 10px;
 		cursor: pointer;
 		transition: all 0.4s ease-in;
 	}
@@ -450,105 +527,9 @@ div.alert h3 {
 		position: absolute;
 		bottom: 20px;
 	}
-
-	/* 럼 출력 슬라이더 */
+	
 	.itemShow {
-		position: relative;
-	}
-
-	/* 좌우스크롤 화살표 */
-	.Bchevron {
-		z-index: 10;
-		position: absolute;
-		bottom: calc(50% - 50px);
-		width: 30px;
-		cursor: pointer;
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
-	}
-	.toLeft {
-		left: 30px;
-	}
-	.toLeft:hover {
-		filter: invert(0.1);
-	}
-	.toRight {
-		right: 30px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-	.carouselBox {
-		padding: 90px 260px 120px;
-		height: 855px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
-	.itemBox {
-		display: inline-block;
-		position: relative;
-		padding: 50px;
-		margin: auto 25px;
-		width: 400px;
-		height: 645px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
-	}
-	.itemBox>.itemImg {
-		width: 300px;
-		height: 300px;
-		margin-bottom: 45px;
-		border-radius: 300px;
-		object-fit: cover;
-	}
-	.itemBox>h5 {
-		margin-bottom: 30px;
-		font-size: 18px;
-		color: #e2e2e2;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.itemBox>p {
-		white-space: normal;
-		font-size: 16px;
-		color: #e2e2e2;
-		text-align: center;
-	}
-	.itemBox>a {
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		left: calc(50% - 75px);
-		bottom: 50px;
-		width: 150px;
-		height: 50px;
-		border-radius: 40px;
-		cursor: pointer;
-		text-align: center;
-		line-height: 47px;
-		font-family: "Noto Sans KR", sans-serif;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-		box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox>a:hover {
-		color: #fff;
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
-		box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
-			rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
+		max-width:1420px;
 	}
 }
 
@@ -865,7 +846,7 @@ div.alert h3 {
 		text-transform: uppercase;
 		text-align: center;
 		border: 1px solid #9542bf;
-		border-radius: 14px;
+		border-radius: 10px;
 		cursor: pointer;
 		transition: all 0.4s ease-in;
 	}
@@ -937,107 +918,8 @@ div.alert h3 {
 		position: absolute;
 		bottom: 20px;
 	}
-
-	/* 검색결과 출력 슬라이더 최상위 박스*/
-	section.itemShow {
-		position: relative;
-	}
-
-	/* 좌우스크롤 화살표 */
-	.Bchevron {
-		z-index: 10;
-		position: absolute;
-		bottom: calc(50% - 50px);
-		width: 30px;
-		cursor: pointer;
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
-	}
-	.toLeft {
-		left: 30px;
-	}
-	.toLeft:hover {
-		filter: invert(0.1);
-	}
-	.toRight {
-		right: 30px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-	.carouselBox {
-		padding: 90px 260px 120px;
-		height: 855px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
-	.itemBox {
-		display: inline-block;
-		position: relative;
-		padding: 50px;
-		margin: auto 25px;
-		width: 400px;
-		height: 645px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
-	}
-	.itemBox>.itemImg {
-		width: 300px;
-		height: 300px;
-		margin-bottom: 45px;
-		border-radius: 300px;
-		object-fit: cover;
-	}
-	.itemBox>h5 {
-		margin-bottom: 30px;
-		font-size: 18px;
-		color: #e2e2e2;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.itemBox>p {
-		white-space: normal;
-		font-size: 16px;
-		color: #e2e2e2;
-		text-align: center;
-	}
-	.itemBox>a {
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		left: calc(50% - 75px);
-		bottom: 50px;
-		width: 150px;
-		height: 50px;
-		border-radius: 40px;
-		cursor: pointer;
-		text-align: center;
-		line-height: 47px;
-		font-family: "Noto Sans KR", sans-serif;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-		box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox>a:hover {
-		color: #fff;
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
-		box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
-			rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
-	}
 }
+
 
 /* ///// TB ///// */
 @media screen and (min-width: 660px) and (max-width: 1049px) {
@@ -1355,7 +1237,7 @@ div.alert h3 {
 		text-transform: uppercase;
 		text-align: center;
 		border: 1px solid #9542bf;
-		border-radius: 14px;
+		border-radius: 10px;
 		cursor: pointer;
 		transition: all 0.4s ease-in;
 	}
@@ -1421,109 +1303,9 @@ div.alert h3 {
 		border-radius: 0 10px 10px 0;
 		background: linear-gradient(to left, #fff 30%, rgba(33, 33, 33, 0) 70%);
 	}
-
-	/* 럼 출력 슬라이더 모양 */
-	.itemShow {
-		position: relative;
-	}
-	.carouselBox {
-		padding: 38px 105px;
-		height: 720px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
-
-	/* 럼 출력 슬라이더 화살표*/
-	.Bchevron {
-		z-index: 9;
-		position: absolute;
-		cursor: pointer;
-		width: 30px;
-		bottom: calc(50% - 50px);
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
-	}
-	.toLeft {
-		left: 27.5px;
-	}
-	.toLeft:hover {
-		filter: invert(0.1);
-	}
-	.toRight {
-		right: 27.5px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-
-	/* 럼 출력 슬라이더 상품소개 박스 */
-	.itemBox {
-		display: inline-block;
-		position: relative;
-		padding: 50px;
-		margin: auto 25px;
-		width: 400px;
-		height: 644px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
-	}
-	.itemBox>.itemImg {
-		width: 300px;
-		height: 300px;
-		margin-bottom: 45px;
-		border-radius: 300px;
-		object-fit: cover;
-	}
-	.itemBox>h5 {
-		margin-bottom: 30px;
-		font-size: 18px;
-		color: #e2e2e2;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.itemBox>p {
-		white-space: normal;
-		font-size: 16px;
-		color: #e2e2e2;
-		text-align: center;
-	}
-	.itemBox>a {
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		left: calc(50% - 75px);
-		bottom: 50px;
-		width: 150px;
-		height: 50px;
-		border-radius: 40px;
-		cursor: pointer;
-		text-align: center;
-		line-height: 47px;
-		font-family: "Noto Sans KR", sans-serif;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-		box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox>a:hover {
-		color: #fff;
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
-		box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
-			rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
-	}
 }
+
+
 
 /* ///// SM ///// */
 @media screen and (max-width: 659px) {
@@ -1658,6 +1440,7 @@ div.alert h3 {
     /* width: 230px; */
 		/*최소너비 수정 시 계산하여 조정*/
 		height: 62px;
+		vertical-align:middle;
 		font-size: 14px;
 		color: #333;
 		border: 1px solid #f5d1e9;
@@ -1856,7 +1639,7 @@ div.alert h3 {
 		text-transform: uppercase;
 		text-align: center;
 		border: 1px solid #9542bf;
-		border-radius: 14px;
+		border-radius: 10px;
 		cursor: pointer;
 		transition: all 0.4s ease-in;
 	}
@@ -1922,108 +1705,8 @@ div.alert h3 {
 		border-radius: 0 10px 10px 0;
 		background: linear-gradient(to left, #fff 30%, rgba(33, 33, 33, 0) 70%);
 	}
-
-	/* 럼 출력 슬라이더 모양 */
-	.itemShow {
-		position: relative;
-	}
-	.carouselBox {
-		padding: 20px 0px 10px 30px;
-		height: 600px;
-		width: 100%;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-		scroll-behavior: smooth;
-		background: url(../imgs/ourRumsCarouselBoxBg.png) no-repeat center;
-		background-size: cover;
-	}
-
-	/* 럼 출력 슬라이더 화살표*/
-	.Bchevron {
-		z-index: 9;
-		position: absolute;
-		width: 25px;
-		cursor: pointer;
-		bottom: calc(50% - 25px);
-		filter: invert(0.7);
-		transition: all 0.4s ease-in;
-	}
-	.toLeft {
-		left: 10px;
-	}
-	.toLeft:hover {
-		filter: invert(0.1);
-	}
-	.toRight {
-		right: 10px;
-	}
-	.toRight:hover {
-		filter: invert(0.1);
-	}
-
-	/* 럼 출력 슬라이더 상품소개 박스 */
-	.itemBox {
-		display: inline-block;
-		position: relative;
-		padding: 50px 20px 30px;
-		margin: auto 15px;
-		width: 280px;
-		height: 560px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
-	}
-	.itemBox>.itemImg {
-		width: 220px;
-		height: 220px;
-		margin-bottom: 25px;
-		border-radius: 300px;
-		object-fit: cover;
-	}
-	.itemBox>h5 {
-		margin-bottom: 20px;
-		font-size: 16px;
-		color: #e2e2e2;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	.itemBox>p {
-		white-space: normal;
-		font-size: 14px;
-		color: #e2e2e2;
-		text-align: center;
-	}
-	.itemBox>a {
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		left: calc(50% - 75px);
-		bottom: 50px;
-		width: 150px;
-		height: 50px;
-		border-radius: 40px;
-		cursor: pointer;
-		text-align: center;
-		line-height: 47px;
-		font-family: "Noto Sans KR", sans-serif;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-		box-shadow: 2px 2px 3px 2px rgba(3, 3, 3, 0.5);
-		transition: all 0.3s ease-in;
-	}
-	.itemBox>a:hover {
-		color: #fff;
-		background: rgba(255, 255, 255, 0.1);
-		border: 0;
-		box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 3px
-			rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(188, 188, 188, 0.5);
-	}
+	
+	/* .itemShow 이하 */
 	div.alert {
 		position: relative;
 		padding: 10px 0;
@@ -2031,22 +1714,15 @@ div.alert h3 {
 		transform: translateY(-50%);
 		margin: auto;
 		width: 250px;
-		border-radius: 30px;
-		border: 3px solid rgba(255, 255, 255, 0.5);
+		border-radius: 10px;
+		border: 2px solid rgba(3, 3, 3, 0.5);
 		transition: all 0.3s ease-in;
-	}
-	div.alert:hover {
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 20px
-			rgba(0, 0, 0, 0.5);
 	}
 	div.alert h3 {
 		height: 100%;
 		font-family: "Gowun Batang", serif;
 		font-size: 18px;
 		text-align: center;
-		color: #fff;
-	}
-	div.carouselBox {
-		padding-left: 0;
+		color: #333;
 	}
 }

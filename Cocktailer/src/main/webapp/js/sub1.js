@@ -6,22 +6,21 @@ $(document).ready(function() {
     });
 
     var tasteFilter = $(".submenu input");
-    var targetList = $(".carouselBox > .itemBox");
-    var alert = $(".carouselBox > .alert");
+    var targetList = $(".itemShow > .itemBox");
+    var alert = $(".itemShow > .alert");
     var targetList2 = $(".pickedBox > div > label");
-    var chevronAll = $(".chevron, .Bchevron");
-    var chevron0 = $(".Bchevron");
+    var chevronAll = $(".chevron");
     var chevron1 = $(
-        ".pickedBox > .toLeft1, .pickedBox > .toRight1, .itemShow > .Bchevron"
+        ".pickedBox > .toLeft1, .pickedBox > .toRight1"
     );
     var chevron2 = $(
-        ".pickedBox > .toLeft2, .pickedBox > .toRight2, .itemShow > .Bchevron"
+        ".pickedBox > .toLeft2, .pickedBox > .toRight2"
     );
     var chevron3 = $(
-        ".pickedBox > .toLeft3, .pickedBox > .toRight3, .itemShow > .Bchevron"
+        ".pickedBox > .toLeft3, .pickedBox > .toRight3"
     );
     var chevron4 = $(
-        ".pickedBox > .toLeft4, .pickedBox > .toRight4, .itemShow > .Bchevron"
+        ".pickedBox > .toLeft4, .pickedBox > .toRight4"
     );
 
     chevronAll.hide();
@@ -40,39 +39,39 @@ $(document).ready(function() {
         var targetClass = targetValue.join(", ");
 
         $(targetClass).fadeIn(); // 선택된 클래스 전부 표시(문서전체)
-
+		
         if (targetClass.match(".n_")) {
-            chevron1.fadeIn(), chevron0.fadeIn();
+            chevron1.fadeIn()
         } else {
             chevron1.hide();
             alert.hide();
         }
         
         if (targetClass.match(".p_")) {
-            chevron2.fadeIn(), chevron0.fadeIn();
+            chevron2.fadeIn()
         } else {
             chevron2.hide();
             alert.hide();
         }
 
         if (targetClass.match(".f_")) {
-            chevron3.fadeIn(), chevron0.fadeIn();
+            chevron3.fadeIn()
         } else {
             chevron3.hide();
             alert.hide();
         }
 
         if (targetClass.match(".t_")) {
-            chevron4.fadeIn(), chevron0.fadeIn();
+            chevron4.fadeIn()
         } else {
             chevron4.hide();
             alert.hide();
         }
 
         if (targetClass == "") {
+			alert.hide();
             chevronAll.fadeOut();
             $(".itemShow").fadeOut();
-            alert.show();
         }
 
         //함수 검증용 코드
@@ -97,7 +96,6 @@ $(document).ready(function() {
     });
     $("#typeBtn").click(function () {
         $('input[name="taste"]').not("#typeBtn").prop("checked", false);
-        // console.log($("#noseBtn").is(":checked"))
     });
 
     // .pickedBox 좌우 스크롤
@@ -136,11 +134,10 @@ $(document).ready(function() {
 
     // .itemShow 좌우 스크롤
     $(".toLeft").click(function () {
-        $(".carouselBox").animate({ scrollLeft: "-=90" }, 30, "swing");
+        $(".itemShow").animate({ scrollLeft: "-=90" }, 30, "swing");
     });
     $(".toRight").click(function () {
-        $(".carouselBox").animate({ scrollLeft: "+=90" }, 30, "swing");
+        $(".itemShow").animate({ scrollLeft: "+=90" }, 30, "swing");
     });
     
-    $(".flexslider").flexslider({ animation: "slide" });
 }); // end of script

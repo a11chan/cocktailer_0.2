@@ -16,10 +16,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="flexSlider/flexslider.css" />
 <link rel="shortcut icon" href="imgs/favicon.ico" />
 
-<script src="flexSlider/jquery.flexslider-min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./js/sub1.js"></script>

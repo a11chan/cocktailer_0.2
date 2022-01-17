@@ -23,7 +23,7 @@
 		<h4>
 			<span>pick</span> your taste
 		</h4>
-		<p class="h4_p">원하는 색과 향으로 나만의 칵테일을 완성하세요.</p>
+		<p class="h4_p">아래 메뉴에서 원하는 맛과 향을 선택해보세요.</p>
 
 		<div class="filterBox">
 			<div class="filterBoxInner">
@@ -345,89 +345,88 @@
 			</div> <!--filterBoxInner:END-->
 		</div>
 	</section>
-
-	<section class="itemShow">
-		<div class="carouselBox">
-			<!-- <div class="alert">
-				<h3>검색조건을 선택해주세요</h3>
-			</div> -->
-			<div
-				class="itemBox n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">
-				<img class="itemImg" src="./imgs/filterItem/1CARTA_BLANCA.jpg"
-					alt="blanca" />
-				<h5>carta blanca</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_vanilla n_cinnamon p_sweet p_spiced f_black-pepper f_fudge t_spiced">
-				<img class="itemImg" src="./imgs/filterItem/2SPICED.jpg"
-					alt="spiced" />
-				<h5>spiced</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_nutty n_butter p_rich p_toasted f_dry f_sweet t_gold">
-				<img class="itemImg" src="./imgs/filterItem/3CARTA_ORO.jpg"
-					alt="oro" />
-				<h5>carta oro</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_toasted n_nutty p_tropical p_medium-bodied f_smoky f_molasses t_dark">
-				<img class="itemImg" src="./imgs/filterItem/4CARTA_NEGRA.jpg"
-					alt="negra" />
-				<h5>carta negra</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_vanilla n_cinnamon p_dark-honey p_clove f_toffee f_oak t_gold">
-				<img class="itemImg" src="./imgs/filterItem/5ANEJO_CUATRO.jpg"
-					alt="cuatro" />
-				<h5>AÑEJO CUATRO</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_dried-apricot n_banana-leaf p_oak p_spiced f_expansive f_well-rounded t_dark">
-				<img class="itemImg" src="./imgs/filterItem/6RESERVA_OCHO.jpg"
-					alt="ocho" />
-				<h5>RESERVA OCHO</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_almonds n_peach p_banana p_pear p_vanilla f_pineapple f_cinnamon t_dark-gold">
-				<img class="itemImg" src="./imgs/filterItem/7RESERVA_DIEZ.jpg"
-					alt="diez" />
-				<h5>GRAN RESERVA DIEZ</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
-			<div
-				class="itemBox n_almonds n_vanilla p_raisin p_chocolate f_oak f_raisin t_blended">
-				<img class="itemImg"
-					src="./imgs/filterItem/8GRAN_RESERVA_LIMITADA.jpg" alt="limitada" />
-				<h5>GRAN RESERVA LIMITADA</h5>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Dicta</p>
-				<a>자세히 보기</a>
-			</div>
+	
+	<div class="clear"></div>
+	
+	<div class="itemShow">
+		<div class="alert">
+			<h3>검색조건을 선택해주세요</h3>
 		</div>
-		<img class="Bchevron toLeft" src="./imgs/toLeft.png" alt="left" /> <img
-			class="Bchevron toRight" src="./imgs/toRight.png" alt="right" />
-		<div class="clear"></div>
-	</section>
+		<div
+			class="itemBox n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">
+			<img class="itemImg" src="./imgs/filterItem/1CARTA_BLANCA.jpg"
+				alt="blanca" />
+			<h5>carta blanca</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_vanilla n_cinnamon p_sweet p_spiced f_black-pepper f_fudge t_spiced">
+			<img class="itemImg" src="./imgs/filterItem/2SPICED.jpg"
+				alt="spiced" />
+			<h5>spiced</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_nutty n_butter p_rich p_toasted f_dry f_sweet t_gold">
+			<img class="itemImg" src="./imgs/filterItem/3CARTA_ORO.jpg"
+				alt="oro" />
+			<h5>carta oro</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_toasted n_nutty p_tropical p_medium-bodied f_smoky f_molasses t_dark">
+			<img class="itemImg" src="./imgs/filterItem/4CARTA_NEGRA.jpg"
+				alt="negra" />
+			<h5>carta negra</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_vanilla n_cinnamon p_dark-honey p_clove f_toffee f_oak t_gold">
+			<img class="itemImg" src="./imgs/filterItem/5ANEJO_CUATRO.jpg"
+				alt="cuatro" />
+			<h5>AÑEJO CUATRO</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_dried-apricot n_banana-leaf p_oak p_spiced f_expansive f_well-rounded t_dark">
+			<img class="itemImg" src="./imgs/filterItem/6RESERVA_OCHO.jpg"
+				alt="ocho" />
+			<h5>RESERVA OCHO</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_almonds n_peach p_banana p_pear p_vanilla f_pineapple f_cinnamon t_dark-gold">
+			<img class="itemImg" src="./imgs/filterItem/7RESERVA_DIEZ.jpg"
+				alt="diez" />
+			<h5>GRAN RESERVA DIEZ</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+		<div
+			class="itemBox n_almonds n_vanilla p_raisin p_chocolate f_oak f_raisin t_blended">
+			<img class="itemImg"
+				src="./imgs/filterItem/8GRAN_RESERVA_LIMITADA.jpg" alt="limitada" />
+			<h5>GRAN RESERVA LIMITADA</h5>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Dicta</p>
+			<a>for more details</a>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
 	
 <%@ include file="/includes/footer.jsp"%>
 
