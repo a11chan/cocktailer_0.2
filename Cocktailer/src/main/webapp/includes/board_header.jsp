@@ -27,3 +27,13 @@
 					class="fab fa-instagram"></i></a></li>
 		</ul>
 	</nav>
+	
+	<div class="banner">
+		<div class="rotate">
+			<h2>experiences</h2>
+		</div>
+		<div class="first">
+			<h3>일상 속 칵테일 라이프 만들기</h3>
+			<p>듣기만 하고 막상 어렵게만 느껴지는 럼을 일상 속에서 만날 수 있는 다양한 프로그램이 준비되어 있습니다.</p>
+		</div>
+	</div>

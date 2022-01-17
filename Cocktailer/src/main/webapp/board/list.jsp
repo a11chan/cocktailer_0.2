@@ -105,7 +105,7 @@ totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock); // 전체블럭
 <body>
 
 	<%@ include file="../includes/board_header.jsp"%>
-
+	
 	<div class="container">
 		<h4>
 			Booking <span>List</span>
