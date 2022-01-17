@@ -21,8 +21,8 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="./js/sub1.js"></script>
 <script src="flexSlider/jquery.flexslider-min.js"></script>
+<script src="./js/sub1.js"></script>
 </head>
 <body>
 	<header>

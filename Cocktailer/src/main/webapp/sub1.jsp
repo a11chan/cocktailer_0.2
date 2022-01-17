@@ -268,9 +268,9 @@
 
 	<div class="flexslider itemShow">
 		<ul class="slides">
-			<li>
+			<li class="n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">
 				<div
-					class="itemBox container n_almonds n_fruit p_smooth p_creamy f_dry f_clean t_white">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/1CARTA_BLANCA.jpg"
 							alt="blanca" />
 					<div class="caption">
@@ -281,9 +281,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_vanilla n_cinnamon p_sweet p_spiced f_black-pepper f_fudge t_spiced">
 				<div
-					class="itemBox container n_vanilla n_cinnamon p_sweet p_spiced f_black-pepper f_fudge t_spiced">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/2SPICED.jpg"
 						alt="spiced" />
 					<div class="caption">
@@ -294,9 +294,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_nutty n_butter p_rich p_toasted f_dry f_sweet t_gold">
 				<div
-					class="itemBox container n_nutty n_butter p_rich p_toasted f_dry f_sweet t_gold">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/3CARTA_ORO.jpg"
 						alt="oro" />
 					<div class="caption">
@@ -307,9 +307,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_toasted n_nutty p_tropical p_medium-bodied f_smoky f_molasses t_dark">
 				<div
-					class="itemBox container n_toasted n_nutty p_tropical p_medium-bodied f_smoky f_molasses t_dark">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/4CARTA_NEGRA.jpg"
 						alt="negra" />
 					<div class="caption">
@@ -320,9 +320,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_vanilla n_cinnamon p_dark-honey p_clove f_toffee f_oak t_gold">
 				<div
-					class="itemBox container n_vanilla n_cinnamon p_dark-honey p_clove f_toffee f_oak t_gold">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/5ANEJO_CUATRO.jpg"
 						alt="cuatro" />
 					<div class="caption">
@@ -333,9 +333,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_dried-apricot n_banana-leaf p_oak p_spiced f_expansive f_well-rounded t_dark">
 				<div
-					class="itemBox container n_dried-apricot n_banana-leaf p_oak p_spiced f_expansive f_well-rounded t_dark">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/6RESERVA_OCHO.jpg"
 						alt="ocho" />
 					<div class="caption">
@@ -346,9 +346,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_almonds n_peach p_banana p_pear p_vanilla f_pineapple f_cinnamon t_dark-gold">
 				<div
-					class="itemBox container n_almonds n_peach p_banana p_pear p_vanilla f_pineapple f_cinnamon t_dark-gold">
+					class="itemBox container">
 					<img class="itemImg" src="./imgs/filterItem/7RESERVA_DIEZ.jpg"
 						alt="diez" />
 					<div class="caption">
@@ -359,9 +359,9 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class="n_almonds n_vanilla p_raisin p_chocolate f_oak f_raisin t_blended">
 				<div
-					class="itemBox container n_almonds n_vanilla p_raisin p_chocolate f_oak f_raisin t_blended">
+					class="itemBox container">
 					<img class="itemImg"
 						src="./imgs/filterItem/8GRAN_RESERVA_LIMITADA.jpg" alt="limitada" />
 					<div class="caption">

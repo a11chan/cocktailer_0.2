@@ -24,10 +24,13 @@ $(document).ready(function() {
 	// 필터 항목 숨김처리 기능 시작
 	// 숨김 스위치, input요소의 value는 상품의 속성임
 	var tasteFilter = $(".submenu input");
+	
 	// 숨길 상품사진
-	var targetList = $(".itemShow .itemBox");
+	/*var targetList = $(".itemShow .itemBox");*/
+	var targetList0 = $("ul.slides > li");
+	
 	// 숨길 상품명
-	var targetList2 = $(".pickedBox > div > label");
+	var targetList1 = $(".pickedBox > div > label");
 
 	// sub1.jsp 내 모든 숨길 화살표들
 	var chevronAll = $(".chevron");
@@ -47,15 +50,15 @@ $(document).ready(function() {
 	);
 	
 	// 페이지 로딩 후 상품관련 요소 숨김처리
-	targetList.hide();
-	targetList2.hide();
+	targetList0.hide();
+	targetList1.hide();
 	chevronAll.hide();
 	
 	// 숨김 스위치 작동시 실행할 내용들
 	tasteFilter.click(function() {
 		chevronAll.hide();
-		targetList.hide();
-		targetList2.hide();
+		targetList0.hide();
+		targetList1.hide();
 
 		var targetValue = [];
 		tasteFilter.filter(":checked").each(function() {
@@ -64,28 +67,33 @@ $(document).ready(function() {
 		var targetClass = targetValue.join(", ");
 
 		$(targetClass).fadeIn(); // 선택된 클래스 전부 표시(문서전체)
-
+		
+		// flex slider
+		$('.flexslider').flexslider({
+			animation: "slide",
+		});
+		
 		// .pickedBox 좌우 화살표 fadeToggle
 		if (targetClass.match(".n_")) {
-			chevron1.fadeIn(), chevron0.fadeIn();
+			chevron1.fadeIn()
 		} else {
 			chevron1.hide();
 		}
 
 		if (targetClass.match(".p_")) {
-			chevron2.fadeIn(), chevron0.fadeIn();
+			chevron2.fadeIn()
 		} else {
 			chevron2.hide();
 		}
 
 		if (targetClass.match(".f_")) {
-			chevron3.fadeIn(), chevron0.fadeIn();
+			chevron3.fadeIn()
 		} else {
 			chevron3.hide();
 		}
 
 		if (targetClass.match(".t_")) {
-			chevron4.fadeIn(), chevron0.fadeIn();
+			chevron4.fadeIn()
 		} else {
 			chevron4.hide();
 		}
@@ -94,9 +102,11 @@ $(document).ready(function() {
 			chevronAll.fadeOut();
 			$(".itemShow").fadeOut();
 		}
-
+		
+		console.log(targetClass);
+		
 	}); // END:div.filterBox 내 클릭 이벤트 발생시 실행 코드
-
+	
 	// .pickedBox 좌우 스크롤
 	$(".toLeft1").click(function() {
 		$("div.box1 > div.pickedNose")
@@ -131,23 +141,10 @@ $(document).ready(function() {
 			.animate({ scrollLeft: "+=100" }, 30, "swing");
 	});
 	
-	
 	// 검색 결과 출력화면 fadeToggle
-	/*
-	$(".itemShow").hide();
+	/*$(".itemShow").hide();*/
 	$("#searchBtn").click(function() {
 		$(".itemShow").fadeToggle();
 	});
-	*/
 	
-	$("#searchBtn").click(function() {
-		$(".itemShow").fadeToggle();
-	});
-
-	
-	$('.flexslider').flexslider({
-		animation: "slide",
-	});
-	
-
 }); // end of script
